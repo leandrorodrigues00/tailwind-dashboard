@@ -14,7 +14,10 @@ export function Profile() {
         <span className="text-sm font-semibold text-zinc-700">
           Leandro Rodrigues
         </span>
-        <span className="truncate text-sm text-zinc-500">
+        <span
+          className="truncate text-sm text-zinc-500"
+          title="leandro.rodrigues00@hotmail.com"
+        >
           leandro.rodrigues00@hotmail.com
         </span>
       </div>
