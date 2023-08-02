@@ -1,11 +1,9 @@
-'use client'
-
-import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
+import { Tabs, TabsList } from '@/components/ui/tabs'
 import { TabItem } from '@/components/settings-tabs/tab-item'
 
 export function SettingsTabs() {
   return (
-    <Tabs>
+    <Tabs defaultValue="my-details">
       <TabsList>
         <TabItem value="my-details" title="My details" />
         <TabItem value="profile" title="Profile" />
@@ -18,10 +16,6 @@ export function SettingsTabs() {
         <TabItem value="integrations" title="Integrations" />
         <TabItem value="api" title="API" />
       </TabsList>
-      <TabsContent value="my-details">
-        Make changes to your account here.
-      </TabsContent>
-      <TabsContent value="profile">Change your password here.</TabsContent>
     </Tabs>
   )
 }
