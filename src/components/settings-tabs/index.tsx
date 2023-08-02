@@ -1,12 +1,13 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+'use client'
 
-import { TabItem } from './tab-item'
+import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
+import { TabItem } from '@/components/settings-tabs/tab-item'
 
 export function SettingsTabs() {
   return (
     <Tabs>
       <TabsList>
-        <TabItem value="my-details" title="My details" isSelected />
+        <TabItem value="my-details" title="My details" />
         <TabItem value="profile" title="Profile" />
         <TabItem value="password" title="Password" />
         <TabItem value="team" title="Team" />
