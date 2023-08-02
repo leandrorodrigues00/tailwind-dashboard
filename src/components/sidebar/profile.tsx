@@ -2,6 +2,13 @@
 
 import { LogOut } from 'lucide-react'
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+
 export function Profile() {
   return (
     <div className="flex items-center gap-3">
@@ -14,12 +21,17 @@ export function Profile() {
         <span className="text-sm font-semibold text-zinc-700">
           Leandro Rodrigues
         </span>
-        <span
-          className="truncate text-sm text-zinc-500"
-          title="leandro.rodrigues00@hotmail.com"
-        >
-          leandro.rodrigues00@hotmail.com
-        </span>
+
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="truncate text-sm text-zinc-500">
+                leandro.rodrigues00@hotmail.com
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>leandro.rodrigues00@hotmail.com</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       <button type="button" className="ml-auto rounded-md p-2 hover:bg-zinc-50">
         <LogOut className="h-5 w-5 text-zinc-500" />
