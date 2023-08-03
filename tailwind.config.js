@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        6: '6px',
+      },
+
+      colors: {
+        violet: {
+          25: '#FCFAFF',
+        },
+      },
+
       gridTemplateColumns: {
         app: 'minmax(18rem, 20rem) 1fr',
         profile: 'min-content 1fr min-content',
@@ -14,5 +24,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [require('tailwindcss-animate')],
 }
