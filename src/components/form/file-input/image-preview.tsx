@@ -3,7 +3,7 @@
 import { useMemo } from 'react'
 import { User } from 'lucide-react'
 
-import { useFileInput } from './root'
+import { useFileInput } from '@/components/form/file-input/root'
 
 export function ImagePreview() {
   const { files } = useFileInput()
@@ -25,6 +25,7 @@ export function ImagePreview() {
   }
 
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={previewUrl}
       className="h-16 w-16 rounded-full object-cover"
