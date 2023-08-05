@@ -1,12 +1,12 @@
 import { ElementType } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-interface NavItemProps {
+interface SidebarNavItemProps {
   title: string
   icon: ElementType
 }
 
-export function NavItem({ title, icon: Icon }: NavItemProps) {
+export function SidebarNavItem({ title, icon: Icon }: SidebarNavItemProps) {
   return (
     <a
       className="group flex items-center gap-3 rounded px-3 py-2 hover:bg-violet-50"

@@ -2,7 +2,7 @@
 
 import { ChangeEvent, ComponentProps } from 'react'
 
-import { useFileInput } from '@/components/form/file-input/root'
+import { useFileInput } from '@/components/ui/input-file/root'
 
 export type ControlProps = ComponentProps<'input'>
 

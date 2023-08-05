@@ -1,5 +1,6 @@
 import { Tabs, TabsList } from '@/components/ui/tabs'
-import { TabItem } from '@/components/settings-tabs/tab-item'
+
+import { TabItem } from './tab-item'
 
 export function SettingsTabs() {
   return (

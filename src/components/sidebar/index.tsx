@@ -1,19 +1,10 @@
-import {
-  BarChart,
-  CheckSquare,
-  Cog,
-  Flag,
-  Home,
-  LifeBuoy,
-  Search,
-  SquareStack,
-  Users,
-} from 'lucide-react'
+import { Cog, LifeBuoy, Search } from 'lucide-react'
 
 import { Input, InputPrefix, InputRoot } from '@/components/ui/input'
 import { Logo } from '@/components/sidebar/logo'
-import { NavItem } from '@/components/sidebar/nav-item'
-import { Profile } from '@/components/sidebar/profile'
+import { ProfileCard } from '@/components/sidebar/profile-card'
+import { SidebarNav } from '@/components/sidebar/sidebar-nav'
+import { SidebarNavItem } from '@/components/sidebar/sidebar-nav-Item'
 import { UsedSpaceWidget } from '@/components/sidebar/used-space-widget'
 
 export function Sidebar() {
@@ -28,26 +19,19 @@ export function Sidebar() {
         <Input placeholder="Search" />
       </InputRoot>
 
-      <nav className="space-y-0.5">
-        <NavItem title="Home" icon={Home} />
-        <NavItem title="Dashboard" icon={BarChart} />
-        <NavItem title="Projects" icon={SquareStack} />
-        <NavItem title="Tasks" icon={CheckSquare} />
-        <NavItem title="Reporting" icon={Flag} />
-        <NavItem title="Users" icon={Users} />
-      </nav>
+      <SidebarNav />
 
       <div className="mt-auto flex flex-col gap-6">
         <nav className="space-y-0.5">
-          <NavItem title="Support" icon={LifeBuoy} />
-          <NavItem title="Settings" icon={Cog} />
+          <SidebarNavItem title="Support" icon={LifeBuoy} />
+          <SidebarNavItem title="Settings" icon={Cog} />
         </nav>
 
         <UsedSpaceWidget />
 
         <div className="h-px bg-zinc-200" />
 
-        <Profile />
+        <ProfileCard />
       </div>
     </aside>
   )

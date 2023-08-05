@@ -2,7 +2,7 @@
 
 import { UploadCloud } from 'lucide-react'
 
-import { useFileInput } from '@/components/form/file-input/root'
+import { useFileInput } from '@/components/ui/input-file/root'
 
 export function Trigger() {
   const { id } = useFileInput()

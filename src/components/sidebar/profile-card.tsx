@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-
 import { LogOut } from 'lucide-react'
 
+import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
@@ -9,7 +9,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
-export function Profile() {
+export function ProfileCard() {
   return (
     <div className="flex items-center gap-3">
       <img
@@ -33,9 +33,9 @@ export function Profile() {
           </Tooltip>
         </TooltipProvider>
       </div>
-      <button type="button" className="ml-auto rounded-md p-2 hover:bg-zinc-50">
-        <LogOut className="h-5 w-5 text-zinc-500" />
-      </button>
+      <Button variant="ghost" className="ml-auto">
+        <LogOut className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
+      </Button>
     </div>
   )
 }

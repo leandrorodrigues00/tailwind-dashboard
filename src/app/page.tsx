@@ -1,10 +1,13 @@
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 
+import { timeZones } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 import { Input, InputPrefix, InputRoot } from '@/components/ui/input'
-import * as FileInput from '@/components/form/file-input'
-import { Select } from '@/components/form/select'
-import { SelectItem } from '@/components/form/select/select-item'
-import { Textarea } from '@/components/form/textarea'
+import * as FileInput from '@/components/ui/input-file'
+import { Label } from '@/components/ui/label'
+import * as Select from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { CountrySelect } from '@/components/country-select'
 import { SettingsTabs } from '@/components/settings-tabs'
 
 export default function Home() {
@@ -22,19 +25,12 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-2 ">
-            <button
-              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-              type="button"
-            >
+            <Button type="button" variant="outline">
               Cancel
-            </button>
-            <button
-              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-700"
-              type="submit"
-              form="settings"
-            >
+            </Button>
+            <Button type="submit" form="settings" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -43,12 +39,8 @@ export default function Home() {
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
         >
           <div className="grid grid-cols-form gap-3">
-            <label
-              htmlFor="firstName"
-              className="text-sm font-medium text-zinc-700"
-            >
-              Name
-            </label>
+            <Label htmlFor="firstName">Name</Label>
+
             <div className="grid grid-cols-2 gap-6">
               <InputRoot>
                 <Input id="firstName" defaultValue="Leandro" />
@@ -61,12 +53,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-zinc-700"
-            >
-              Email address
-            </label>
+            <Label htmlFor="email">Email address</Label>
+
             <InputRoot>
               <InputPrefix>
                 <Mail className="h-5 w-5 text-zinc-500" />
@@ -80,15 +68,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label
-              htmlFor="photo"
-              className="text-sm font-medium text-zinc-700"
-            >
+            <Label htmlFor="photo">
               Your photo
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
                 This will be displayed on your profile.
               </span>
-            </label>
+            </Label>
 
             <FileInput.Root className="flex items-start gap-5">
               <FileInput.ImagePreview />
@@ -98,96 +83,85 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label htmlFor="role" className="text-sm font-medium text-zinc-700">
-              Role
-            </label>
+            <Label htmlFor="role">Role</Label>
             <InputRoot>
               <Input id="role" defaultValue="CTO" />
             </InputRoot>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label
-              htmlFor="country"
-              className="text-sm font-medium text-zinc-700"
-            >
-              Country
-            </label>
+            <Label htmlFor="country">Country</Label>
 
-            <Select placeholder="Select a country...">
-              <SelectItem value="br" text="Brazil" />
-              <SelectItem value="us" text="United States" />
-            </Select>
+            <CountrySelect />
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label
-              htmlFor="timezone"
-              className="text-sm font-medium text-zinc-700"
-            >
-              Timezone
-            </label>
-            <Select placeholder="Select a timezone...">
-              <SelectItem
-                value="pst"
-                text="Pacific Standard Time (UTC-08:00)"
-              />
-              <SelectItem value="gmt" text="Greenwich Mean Time (+00:00)" />
-            </Select>
+            <Label htmlFor="timezone">Timezone</Label>
+
+            <Select.Root name="timezone">
+              <Select.Trigger>
+                <Select.Value placeholder="Select your timezone..." />
+              </Select.Trigger>
+
+              <Select.Content>
+                {timeZones.map((timeZone) => (
+                  <Select.Item key={timeZone.value} value={timeZone.value}>
+                    <Select.ItemText>
+                      {timeZone.name}
+                      <span className="text-sm text-zinc-500">
+                        {timeZone.offset}
+                      </span>
+                    </Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Root>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
+            <Label htmlFor="bio">
               Bio
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
                 Write a short introduction.
               </span>
-            </label>
+            </Label>
+
             <div className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
-                <Select placeholder="" defaultValue="normal">
-                  <SelectItem value="normal" text="Normal Text" />
-                  <SelectItem value="md" text="Markdown" />
-                </Select>
+                <Select.Root defaultValue="normal">
+                  <Select.Trigger>
+                    <Select.Value />
+                  </Select.Trigger>
+
+                  <Select.Content>
+                    <Select.Item value="normal">
+                      <Select.ItemText>Normal text</Select.ItemText>
+                    </Select.Item>
+                    <Select.Item value="md">
+                      <Select.ItemText>Markdown</Select.ItemText>
+                    </Select.Item>
+                  </Select.Content>
+                </Select.Root>
 
                 <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-zinc-50"
-                  >
-                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-zinc-50"
-                  >
-                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-zinc-50"
-                  >
-                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-zinc-50"
-                  >
-                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="rounded-md p-2 hover:bg-zinc-50"
-                  >
+                  <Button variant="ghost">
+                    <Bold className="h-4 w-4 text-zinc-400" strokeWidth={3} />
+                  </Button>
+                  <Button variant="ghost">
+                    <Italic className="h-4 w-4 text-zinc-400" strokeWidth={3} />
+                  </Button>
+                  <Button variant="ghost">
+                    <Link className="h-4 w-4 text-zinc-400" strokeWidth={3} />
+                  </Button>
+                  <Button variant="ghost">
+                    <List className="h-4 w-4 text-zinc-400" strokeWidth={3} />
+                  </Button>
+                  <Button variant="ghost">
                     <ListOrdered
-                      className="h-4 w-4 text-zinc-500"
+                      className="h-4 w-4 text-zinc-400"
                       strokeWidth={3}
                     />
-                  </button>
+                  </Button>
                 </div>
               </div>
               <Textarea
@@ -198,15 +172,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
-            <label
-              htmlFor="projects"
-              className="text-sm font-medium text-zinc-700"
-            >
+            <Label htmlFor="projects">
               Portfolio projects
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
                 Share a few snippets of your work.
               </span>
-            </label>
+            </Label>
             <FileInput.Root>
               <FileInput.Trigger />
               <FileInput.FileList />
@@ -215,18 +186,12 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
-            >
+            <Button type="button" variant="outline">
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-700"
-            >
+            </Button>
+            <Button type="submit" form="settings" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>
