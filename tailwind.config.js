@@ -34,9 +34,8 @@ module.exports = {
         },
       },
       animation: {
-        slideDownAndFade:
-          'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideDownAndFade: 'slideDownAndFade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        slideUpAndFade: 'slideUpAndFade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },
