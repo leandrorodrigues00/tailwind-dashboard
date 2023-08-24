@@ -23,7 +23,7 @@ const button = tv({
   },
 })
 
-export interface ButtonProps
+interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button> {
   asChild?: boolean

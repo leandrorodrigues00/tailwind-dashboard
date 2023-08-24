@@ -27,7 +27,7 @@ const ScrollViewport = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <ScrollAreaPrimitive.Viewport
     ref={ref}
-    className={cn('overflow-y-scroll" h-full w-full', className)}
+    className={cn('h-full w-full overflow-y-scroll', className)}
     {...props}
   >
     {children}
