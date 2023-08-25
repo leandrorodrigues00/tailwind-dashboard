@@ -1,5 +1,6 @@
 'use client'
 
+// @see: https://github.com/radix-ui/primitives/issues/2059
 import { ComponentProps } from 'react'
 import * as Select from '@radix-ui/react-select'
 import { Check } from 'lucide-react'
