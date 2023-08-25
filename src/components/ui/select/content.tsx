@@ -26,7 +26,7 @@ export function Content({ children, ...props }: ContentProps) {
             <ScrollViewport>{children}</ScrollViewport>
           </Select.Viewport>
 
-          <ScrollBar />
+          <ScrollBar className="invisible flex w-2.5 touch-none select-none bg-zinc-100 p-0.5 group-hover:visible dark:bg-zinc-700" />
         </ScrollArea>
       </Select.Content>
     </Select.Portal>

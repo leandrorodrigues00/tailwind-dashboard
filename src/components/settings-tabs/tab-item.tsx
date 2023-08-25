@@ -8,7 +8,7 @@ interface TabItemProps {
 export function TabItem({ title, value }: TabItemProps) {
   return (
     <TabsTrigger className="group outline-none" value={value}>
-      <span className="rounded group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
+      <span className="whitespace-nowrap rounded group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
         {title}
       </span>
 

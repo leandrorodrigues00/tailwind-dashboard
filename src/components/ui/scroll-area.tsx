@@ -39,20 +39,35 @@ ScrollViewport.displayName = ScrollAreaPrimitive.ScrollAreaViewport.displayName
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Scrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Scrollbar>
->(({ className, orientation = 'vertical', ...props }, ref) => (
+>(({ className, children, orientation = 'vertical', ...props }, ref) => (
   <ScrollAreaPrimitive.Scrollbar
     ref={ref}
     orientation={orientation}
-    className={cn(
-      'invisible flex w-2.5 touch-none select-none bg-zinc-100 p-0.5 group-hover:visible dark:bg-zinc-700',
-      className,
-    )}
+    className={cn(className)}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-lg bg-zinc-300 before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] dark:bg-zinc-500" />
+    {children || (
+      <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-lg bg-zinc-300 before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-[''] dark:bg-zinc-500" />
+    )}
   </ScrollAreaPrimitive.Scrollbar>
 ))
 
 ScrollBar.displayName = ScrollAreaPrimitive.Scrollbar.displayName
 
-export { ScrollArea, ScrollBar, ScrollViewport }
+const ScrollThumb = React.forwardRef<
+  React.ElementRef<typeof ScrollAreaPrimitive.Thumb>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Thumb>
+>(({ className, ...props }, ref) => (
+  <ScrollAreaPrimitive.Thumb
+    ref={ref}
+    className={cn(
+      "relative flex-1 rounded-lg bg-zinc-300 before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']",
+      className,
+    )}
+    {...props}
+  />
+))
+
+ScrollThumb.displayName = ScrollAreaPrimitive.Thumb.displayName
+
+export { ScrollArea, ScrollBar, ScrollViewport, ScrollThumb }
