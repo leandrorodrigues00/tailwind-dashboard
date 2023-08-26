@@ -1,4 +1,4 @@
-# Tailwind Dashboard - Organize your dashboards 📶
+# Tailwind Dashboard - Organize your data 📶
 
 <br>
 
