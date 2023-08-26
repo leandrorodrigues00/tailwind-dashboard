@@ -3,7 +3,7 @@
 import { useMemo } from 'react'
 import { User } from 'lucide-react'
 
-import { useFileInput } from '@/components/ui/input-file/root'
+import { useFileInput } from './root'
 
 export function ImagePreview() {
   const { files } = useFileInput()

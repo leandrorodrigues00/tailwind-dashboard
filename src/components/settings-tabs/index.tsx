@@ -11,7 +11,7 @@ import { TabItem } from './tab-item'
 export function SettingsTabs() {
   return (
     <Tabs defaultValue="my-details">
-      <ScrollArea className="w-full" type="scroll">
+      <ScrollArea className="w-full" type="hover">
         <ScrollViewport className="w-full overflow-x-scroll">
           <TabsList>
             <TabItem value="my-details" title="My details" />
@@ -27,7 +27,7 @@ export function SettingsTabs() {
           </TabsList>
         </ScrollViewport>
         <ScrollBar
-          className="flex h-0.5 translate-y-1.5 touch-none select-none flex-col bg-zinc-100"
+          className="flex h-2.5 touch-none select-none flex-col bg-zinc-100 p-0.5"
           orientation="horizontal"
         >
           <ScrollThumb />

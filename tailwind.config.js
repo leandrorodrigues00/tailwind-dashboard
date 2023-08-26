@@ -51,6 +51,9 @@ module.exports = {
         slideDownAndFade: 'slideDownAndFade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         slideUpAndFade: 'slideUpAndFade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
       },
+      screens: {
+        xl: '1124px',
+      },
     },
   },
 
