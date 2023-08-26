@@ -1,4 +1,4 @@
-# Tailwind Dashboard - Organize your dashboards with tailwind 📶
+# Tailwind Dashboard - Organize your dashboards 📶
 
 <br>
 
@@ -27,7 +27,7 @@ The project showcases a variety of interesting features, including comprehensive
 
 You can view the project layout through the links below:
 
-- [Layout in Figma](https://www.figma.com/file/MU3H8HfTxX32ukt8ANpan7/Ignite-Tailwind?type=design&mode=design&t=mzm4cpcbqSh8lWD8-0)
+- [Layout in Figma](<https://www.figma.com/file/6En2t3Zqy1otaq6DfoiGKS/Ignite-Tailwind-(Copy)?type=design&mode=design&t=hP5oxouaPGkxOO6x-0>)
 
 > Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
@@ -37,7 +37,6 @@ You can view the project layout through the links below:
 - [Radix UI](https://www.radix-ui.com/)
 - [Tailwind Css](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Zod](https://github.com/colinhacks/zod)
 
 ## 💻 Getting started
 
